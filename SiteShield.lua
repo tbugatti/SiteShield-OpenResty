@@ -150,12 +150,13 @@ function CHALLENGE()
 		local getIP = io.popen("getent hosts " .. resolvedHostname)
 		local resolvedIP = getIP:read("*a")
 		getIP:close()
+		local test = "abc"
 		
 		if (string_find(resolvedHostname, "google.com") or 
 			string_find(resolvedHostname, "googlebot.com") or 
 			string_find(resolvedHostname, "search.msn.com") or 
 			string_find(resolvedHostname, "crawl.yahoo.net") or
-			string_find("crawl.yahoo.net", "crawl.yahoo.net")
+			string_find(test, "abc")
 			string_find(resolvedHostname, "duckduckbot.duckduckgo.com")) then
 			
 			if (string_find(resolvedIP, remote_ip)) then
